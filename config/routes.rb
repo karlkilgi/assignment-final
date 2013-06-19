@@ -1,7 +1,8 @@
 AssignmentFinal::Application.routes.draw do
-  get "home/index"
+  get 'home/index'
 
   match '/auth/:provider/callback', :to => 'sessions#create'
+  get '/logout', :to => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
