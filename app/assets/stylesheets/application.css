@@ -1,13 +1,117 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+.header {
+    background: #0d171e;
+    border-bottom: 1px solid #1a2d3a;
+    height: 2.1875em;
+    display: block;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 5px;
+    padding-right: 20px;
+    min-width: 60em;
+    position: relative;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    color: #818694;
+    text-align: right;
+}
+
+.nav {
+    background: #1a2d3a;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0 .625em;
+    min-width: 60em;
+    height: 8.0625em;
+    position: relative;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 60em;
+    height: 100%;
+    clear: both;
+    zoom: 1;
+}
+
+.logo {
+    position: absolute;
+    font-size: 3em;
+    line-height: 1;
+    left: 0;
+    margin: 0;
+    z-index: 110;
+    cursor: pointer;
+    display: block;
+    width: 215px;
+    height: 129px;
+    overflow: hidden;
+}
+
+.links {
+    color: #ffffff;
+    margin: 0;
+    float: right;
+    padding: 0 0 0 25%;
+    position: absolute;
+    bottom: 3.25em;
+    right: 0;
+
+}
+
+body {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 0;
+    background: #BDF;
+}
+
+html {
+    height: 100%;
+}
+
+ul li {
+    display: inline;
+    padding-left: 20px;
+    float: left;
+}
+
+.footer {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #1a2d3a;
+}
+
+.content {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #ffffff;
+}

@@ -2,19 +2,37 @@
 <html>
 <head>
   <title>AssignmentFinal</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user.nil? %>
-    <%= link_to 'Login With Facebook', '/auth/facebook' %>
-<% else %>
-    <%= 'Welcome ' + current_user.name %>
-    <%= link_to 'Logout', '/logout' %>
-<% end %>
+<div class="header">
+  <% if current_user.nil? %>
+      <%= link_to 'Sign In', '/auth/facebook' %>
+  <% else %>
+      <%= 'Logged in as: ' + current_user.name %>
+      <%= link_to 'Logout', '/logout' %>
+  <% end %>
+</div>
+<div class="nav">
+  <div class="wrap">
+    <a class="logo" href="/"><%= image_tag 'logo.png' %></a>
 
-<%= yield %>
+    <div class="links">
+      <ul>
+        <li><%= link_to 'Petitions', '/petitions' %></li>
+        <li><%= link_to 'Success', '/success' %></li>
+        <li><%= link_to 'About', '/about' %></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
+<div class="content">
+  <%= yield %>
+</div>
+<div class="footer"></div>
 </body>
+
 </html>
