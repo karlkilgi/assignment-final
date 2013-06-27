@@ -4,15 +4,26 @@ class PetitionsController < ApplicationController
   end
 
   def mypetitions
+    if current_user.nil?
+      redirect_to root_path
+    end
+    @petition = Petition.find_all_by_user_id session['user_id']
   end
 
   def new
-    @petition = Petition.new
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @petition }
+    if current_user.nil?
+      redirect_to root_path
+    else
+      @petition = Petition.new
+      respond_to do |format|
+        format.html
+        format.json { render json: @petition }
+      end
     end
+  end
+
+  def edit
+    @petition = Petition.find(params[:id])
   end
 
   def create
@@ -32,6 +43,13 @@ class PetitionsController < ApplicationController
 
   def show
     @petition = Petition.find(params[:id])
+    @voted = false
+    votes = Vote.find_all_by_petition_id(params[:id])
+    votes.each do |vote|
+      if vote.user_id == session['user_id']
+        @voted = true
+      end
+    end
 
     respond_to do |format|
       format.html

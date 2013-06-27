@@ -89,15 +89,15 @@ ul li {
 
 .footer {
     width: 100%;
-    height: 80px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    height: 125px;
+    position: relative;
     background: #1a2d3a;
+    margin-top: 15px;
 }
 
 .content {
     width: 60%;
+    min-height: 640px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -105,10 +105,6 @@ ul li {
 .nav a:link {
     text-decoration: none;
     color: #ffffff;
-}
-
-.nav  a:visited {
-    text-decoration: none;
 }
 
 .nav a:visited {
@@ -119,10 +115,6 @@ ul li {
 .header a:link {
     text-decoration: none;
     color: #ffffff;
-}
-
-.header  a:visited {
-    text-decoration: none;
 }
 
 .header a:visited {
@@ -136,13 +128,19 @@ ul li {
 
 .content-left {
     width: 45%;
-    float: left;
+    display: inline-block;
     padding: 15px;
+}
+
+.header-content-left {
+    width: 50%;
+    float: left;
+    padding-left: 20%;
 }
 
 .content-right {
     width: 45%;
-    float: right;
+    display: inline-block;
     padding: 15px;
 }
 
@@ -152,8 +150,7 @@ table {
     background: #fefefe;
     width: 70%;
     margin: 5% auto 0;
-    -moz-border-radius: 5px; /* FF1+ */
-    -webkit-border-radius: 5px; /* Saf3-4 */
+    -moz-border-radius: 5px;
     border-radius: 5px;
     -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
@@ -190,6 +187,8 @@ td.last {
 td {
     background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
     background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
+    max-width: 600px;
+    word-wrap: break-word;
 }
 
 tr.odd-row td {
@@ -205,10 +204,6 @@ th {
 td a:link {
     text-decoration: none;
     color: #1a2d3a;
-}
-
-td a:visited {
-    text-decoration: none;
 }
 
 td a:visited {
@@ -230,4 +225,27 @@ tr:last-child td.first {
 
 tr:last-child td.last {
     -moz-border-radius-bottomright: 5px;
+}
+
+.button-content-left {
+    width: 130px;
+    position:relative;
+    left:50%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    margin-top: 40px;
+    background: #1a2d3a;
+
+}
+
+.button-content-left a:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.button-content-left a:link {
+    text-decoration: none;
+    color: #ffffff;
 }

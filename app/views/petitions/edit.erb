@@ -24,17 +24,11 @@
     <%= @petition.votes.count %>
   </p>
 
-  <% if current_user.nil? %>
-      <p>Sign in to Vote</p>
 
-  <% elsif @voted %>
-      <p>You have voted!</p>
-
-  <% else %>
-      <%= form_for :vote, url: petition_vote_path(@petition) do |f| %>
-          <p>
-            <%= f.submit 'Give your Vote!' %>
-          </p>
-      <% end %>
+  <%= form_for :vote, url: petition_vote_path(@petition) do |f| %>
+      <p>
+        <%= f.submit 'Delete' %>
+      </p>
   <% end %>
+
 </div>

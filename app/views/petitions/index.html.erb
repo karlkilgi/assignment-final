@@ -10,7 +10,7 @@
     <% @petition.each do |petition| %>
         <tr>
           <td><%= petition.title %></td>
-          <td><%= petition.vote %></td>
+          <td><%= petition.votes.count %></td>
           <td><%= link_to 'Select', petition %></td>
         </tr>
     <% end %>

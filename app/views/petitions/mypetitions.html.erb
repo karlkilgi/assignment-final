@@ -1,3 +1,25 @@
 <div class="content-header">
   <h2>Here you can create and delete petitions!</h2>
 </div>
+
+
+<div class="header-content-left">
+  <h3>Select for editing:</h3>
+</div>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Signatures</th>
+  </tr>
+  <% @petition.each do |petition| %>
+      <tr>
+        <td><%= petition.title %></td>
+        <td><%= petition.votes.count %></td>
+        <td><%= link_to 'Select', petition %></td>
+      </tr>
+  <% end %>
+</table>
+
+<div class="button-content-left">
+  <%= link_to 'Create new!', new_petition_path %>
+</div>
