@@ -24,11 +24,10 @@
     <%= @petition.votes.count %>
   </p>
 
-
-  <%= form_for :vote, url: petition_vote_path(@petition) do |f| %>
-      <p>
-        <%= f.submit 'Delete' %>
-      </p>
-  <% end %>
+  <p>
+    <%= button_to 'Delete petition', petition_path,
+                :confirm => 'Are you sure?',
+                :method => :delete %>
+  </p>
 
 </div>

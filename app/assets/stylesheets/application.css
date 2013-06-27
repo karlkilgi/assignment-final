@@ -249,3 +249,7 @@ tr:last-child td.last {
     text-decoration: none;
     color: #ffffff;
 }
+
+p {
+    word-wrap: break-word;
+}

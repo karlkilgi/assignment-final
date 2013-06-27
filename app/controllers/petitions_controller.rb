@@ -57,4 +57,10 @@ class PetitionsController < ApplicationController
     end
   end
 
+  def destroy
+    @petition = Petition.find(params[:id])
+    @petition.destroy
+    redirect_to '/petitions/mypetitions'
+  end
+
 end
