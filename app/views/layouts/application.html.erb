@@ -11,7 +11,7 @@
   <% if current_user.nil? %>
       <%= link_to 'Sign In', '/auth/facebook' %>
   <% else %>
-      <%= 'Logged in as: ' + current_user.name %>
+      <%= current_user.name + ' | ' %>
       <%= link_to 'Logout', '/logout' %>
   <% end %>
 </div>
@@ -21,9 +21,12 @@
 
     <div class="links">
       <ul>
-        <li><%= link_to 'Petitions', '/petitions' %></li>
-        <li><%= link_to 'Success', '/success' %></li>
-        <li><%= link_to 'About', '/about' %></li>
+        <% unless current_user.nil? %>
+            <li><%= link_to 'My Petitions', '/petitions/mypetitions' %></li>
+        <% end %>
+        <li><%= link_to 'Petitions', petitions_path %></li>
+        <li><%= link_to 'Success', '/success/index' %></li>
+        <li><%= link_to 'About', '/about/index' %></li>
       </ul>
     </div>
   </div>
