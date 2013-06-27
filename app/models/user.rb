@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
     create(:name => hash['info']['name'])
   end
 
+  def find (id)
+
+  end
+
 end

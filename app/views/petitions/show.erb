@@ -1,0 +1,30 @@
+<p>
+  <strong>User:</strong>
+  <%= @petition.user.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @petition.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @petition.body %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @petition.target %>
+</p>
+
+<p>
+  <strong>Votes:</strong>
+  <%= @petition.vote %>
+</p>
+
+<%= form_for :vote, url: petition_vote_path(@petition) do |f| %>
+    <p>
+      <%= f.submit 'Give your Vote!'%>
+    </p>
+<% end %>

@@ -4,7 +4,11 @@ AssignmentFinal::Application.routes.draw do
   get 'home/index'
   get 'about/index'
   get 'success/index'
-  resources :petitions
+
+  resources :petitions do
+    resource :vote
+  end
+
   match '/auth/:provider/callback', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'
 
