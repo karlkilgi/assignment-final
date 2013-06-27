@@ -1,19 +1,24 @@
 <div class="content-header">
   <h2>Here you can create and delete petitions!</h2>
 </div>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Signatures</th>
-  </tr>
-  <% @petition.each do |petition| %>
+
+<% unless @petition.empty? %>
+    <table>
       <tr>
-        <td><%= petition.title %></td>
-        <td><%= petition.votes.count %></td>
-        <td><%= link_to 'Select', edit_petition_path(petition)  %></td>
+        <th>Title</th>
+        <th>Signatures</th>
       </tr>
-  <% end %>
-</table>
+      <% @petition.each do |petition| %>
+          <tr>
+            <td><%= petition.title %></td>
+            <td><%= petition.votes.count %></td>
+            <td><%= link_to 'Edit', edit_petition_path(petition) %></td>
+          </tr>
+      <% end %>
+    </table>
+<% else %>
+    <p>You haven't created any petitions yet.</p>
+<% end %>
 
 <div class="button-content-left">
   <%= link_to 'Create new!', new_petition_path %>

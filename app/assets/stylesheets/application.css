@@ -253,3 +253,7 @@ tr:last-child td.last {
 p {
     word-wrap: break-word;
 }
+
+.petition-content table {
+    margin: 1% auto 0;
+}

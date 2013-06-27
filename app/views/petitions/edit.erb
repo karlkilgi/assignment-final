@@ -1,33 +1,45 @@
-<div class="content-left">
+<div class="petition-content">
   <p>
-    <strong>User:</strong>
+    <strong>Created by:</strong>
     <%= @petition.user.name %>
   </p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @petition.title %>
-  </p>
+  <table>
+    <tr>
+      <th>Title</th>
+    </tr>
+    <tr>
+      <td><%= @petition.title %></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>Content</th>
+    </tr>
+    <tr>
+      <td><%= @petition.body %></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>Votes/Target</th>
+    </tr>
+    <tr>
+      <td><%= @petition.votes.count %> / <%= @petition.target %></td>
+    </tr>
+  </table>
 
-  <p>
-    <strong>Text:</strong>
-    <%= @petition.body %>
-  </p>
-
-  <p>
-    <strong>Target:</strong>
-    <%= @petition.target %>
-  </p>
-
-  <p>
-    <strong>Votes:</strong>
-    <%= @petition.votes.count %>
-  </p>
-
-  <p>
-    <%= button_to 'Delete petition', petition_path,
-                :confirm => 'Are you sure?',
-                :method => :delete %>
-  </p>
-
+  <table>
+    <tr>
+      <th>Destroy?</th>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <%= button_to 'Delete petition', petition_path,
+                        :confirm => 'Are you sure?',
+                        :method => :delete %>
+        </p></td>
+    </tr>
+  </table>
 </div>

@@ -1,40 +1,53 @@
-<div class="content-left">
+<div class="petition-content">
   <p>
-    <strong>User:</strong>
+    <strong>Created by:</strong>
     <%= @petition.user.name %>
   </p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @petition.title %>
-  </p>
+  <table>
+    <tr>
+      <th>Title</th>
+    </tr>
+    <tr>
+      <td><%= @petition.title %></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>Content</th>
+    </tr>
+    <tr>
+      <td><%= @petition.body %></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>Votes/Target</th>
+    </tr>
+    <tr>
+      <td><%= @petition.votes.count %> / <%= @petition.target %></td>
+    </tr>
+  </table>
 
-  <p>
-    <strong>Text:</strong>
-    <%= @petition.body %>
-  </p>
+  <table>
+    <tr>
+      <th>Voting</th>
+    </tr>
+    <tr>
+      <td>
+        <% if current_user.nil? %>
+            <p>Sign in to Vote</p>
 
-  <p>
-    <strong>Target:</strong>
-    <%= @petition.target %>
-  </p>
+        <% elsif @voted %>
+            <p>You have voted!</p>
 
-  <p>
-    <strong>Votes:</strong>
-    <%= @petition.votes.count %>
-  </p>
-
-  <% if current_user.nil? %>
-      <p>Sign in to Vote</p>
-
-  <% elsif @voted %>
-      <p>You have voted!</p>
-
-  <% else %>
-      <%= form_for :vote, url: petition_vote_path(@petition) do |f| %>
-          <p>
-            <%= f.submit 'Give your Vote!' %>
-          </p>
-      <% end %>
-  <% end %>
+        <% else %>
+            <%= form_for :vote, url: petition_vote_path(@petition) do |f| %>
+                <p>
+                  <%= f.submit 'Give your Vote!' %>
+                </p>
+            <% end %>
+        <% end %></td>
+    </tr>
+  </table>
 </div>

@@ -1,3 +1,18 @@
 <div class="content-header">
   <h2>Petitions that have reached their goal:</h2>
 </div>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Signatures</th>
+  </tr>
+
+  <% @successful_petitions.each do |petition| %>
+      <tr>
+        <td><%= petition.title %></td>
+        <td><%= petition.votes.count %></td>
+        <td><%= link_to 'View', petition %></td>
+      </tr>
+  <% end %>
+</table>

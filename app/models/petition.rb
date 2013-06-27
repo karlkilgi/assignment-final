@@ -5,7 +5,7 @@ class Petition < ActiveRecord::Base
   validates :title, :presence => true,
             :length => {:minimum => 5}
   validates :body, :presence => true,
-            :length => {:minimum => 5}
+            :length => {:minimum => 20}
   validates :target, :presence => true,
             :length => {:minimum => 1}
   validates :user_id, :presence => true

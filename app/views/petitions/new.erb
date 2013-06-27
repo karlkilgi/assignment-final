@@ -1,16 +1,18 @@
+<h2>Enter the data about your petition:</h2>
+
 <%= form_for :petition, url: petitions_path do |f| %>
     <p>
-      <%= f.label :title %><br>
+      <%= f.label 'Title (min 5char):' %><br>
       <%= f.text_field :title %>
     </p>
 
     <p>
-      <%= f.label :body %><br>
+      <%= f.label 'Content (min 20char):' %><br>
       <%= f.text_area :body %>
     </p>
 
     <p>
-      <%= f.label :target %><br>
+      <%= f.label 'Target # of votes (min 1):' %><br>
       <%= f.text_field :target %>
     </p>
 
