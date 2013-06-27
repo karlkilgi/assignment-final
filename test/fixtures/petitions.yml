@@ -2,14 +2,7 @@
 
 one:
   user_id: 1
-  title: MyString
-  body: MyText
+  title: Petition
+  body: Petition Content
   target: 1
-  vote: 1
-
-two:
-  user_id: 1
-  title: MyString
-  body: MyText
-  target: 1
-  vote: 1
+  vote: 0
